@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name:  zomato-clone-app
+  labels:
+    app: zomato-clone-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: zomato-clone-app
+  template:
+    metadata:
+      labels:
+        app: zomato-clone-app
+    spec:
+      containers:
+      - name: zomato-clone-app
+        image: aniiketpatiil/zomato-clone-app/v1
+        ports:
+        - containerPort: 8080
